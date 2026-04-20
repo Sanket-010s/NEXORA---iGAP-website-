@@ -1,0 +1,49 @@
+/* ============================================================
+   VARIABLES.CSS
+   All design tokens / CSS custom properties live here.
+   Change brand colors, fonts, and spacing from this one file.
+   ============================================================ */
+
+:root {
+  /* ── BRAND COLORS (Blue Theme) ── */
+  --primary:        #3B82F6;                    /* Primary blue accent */
+  --primary-dark:   #2563EB;                    /* Darker blue for hover */
+  --primary-light:  #60A5FA;                    /* Lighter blue */
+  --primary-glow:   rgba(59, 130, 246, 0.35);   /* Glow / shadow tint */
+  --primary-faint:  rgba(59, 130, 246, 0.08);   /* Very light tint for hover backgrounds */
+
+  /* Legacy red variable mappings (for compatibility) */
+  --red:        var(--primary);
+  --red-glow:   var(--primary-glow);
+  --red-faint:  var(--primary-faint);
+
+  /* ── BACKGROUND COLORS (Lighter, more neutral) ── */
+  --bg:   #F8FAFC;   /* Page background - very light gray/white */
+  --bg2:  #F1F5F9;   /* Slightly darker sections */
+  --bg3:  #E2E8F0;   /* Cards / subtle depth */
+  --card: #FFFFFF;   /* Feature and pricing cards - pure white */
+
+  /* ── BORDER COLORS ── */
+  --border:  rgba(148, 163, 184, 0.2);   /* Default border - neutral gray */
+  --border2: rgba(148, 163, 184, 0.3);   /* Slightly stronger border */
+
+  /* ── TEXT COLORS (Dark on light) ── */
+  --text:  #0F172A;                   /* Primary text - dark slate */
+  --text2: #475569;                   /* Secondary / muted text - medium slate */
+  --text3: #94A3B8;                   /* Placeholder / hint text - light slate */
+
+  /* ── TYPOGRAPHY ── */
+  --font-heading: 'Syne', sans-serif;   /* Used for h1, h2, h3, logo */
+  --font-body:    'DM Sans', sans-serif; /* Used for all body text */
+
+  /* ── SPACING ── */
+  --section-padding: 100px 24px;  /* Top/bottom padding for sections */
+  --container-width: 1200px;      /* Max width of content */
+  --nav-height: 72px;             /* Navbar height */
+
+  /* ── BORDER RADIUS ── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}

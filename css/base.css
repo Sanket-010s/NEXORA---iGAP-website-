@@ -1,0 +1,118 @@
+/* ============================================================
+   BASE.CSS
+   Resets, body defaults, scrollbar, shared utility classes,
+   and animations used across the whole site.
+   ============================================================ */
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--red); border-radius: 2px; }
+
+/* ── SHARED SECTION WRAPPER ── */
+section {
+  padding: var(--section-padding);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* ── SECTION LABEL (red overline text above headings) ── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--red);
+}
+
+/* ── HEADINGS ── */
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+/* ── SUBTITLE BELOW SECTION HEADING ── */
+.section-sub {
+  font-size: 16px;
+  color: var(--text2);
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 48px;
+}
+
+/* ── SCROLL REVEAL ANIMATION ── */
+/* Add class="reveal" to any element to animate it in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── FADE UP KEYFRAME (used by hero elements) ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── BLINK (used by hero dot indicator) ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── PULSE GLOW (used by hero background) ── */
+@keyframes pulse-glow {
+  0%   { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 1;   transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* ── MARQUEE SCROLL ── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

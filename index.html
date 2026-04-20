@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══ PAGE TITLE — change this ══ -->
+  <title>iGAP Technologies — AI, Data Science & Software Development</title>
+
+  <!-- ══ Google Fonts ══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- ══ Stylesheets (load order matters) ══
+       1. variables  → brand colors, fonts, spacing
+       2. base       → resets, body, shared utilities, animations
+       3. components → buttons, navbar, cart, cursor, back-to-top
+       4. sections   → hero, marquee, services, pricing, Industry Solutions, footer
+       5. responsive → all media queries
+  -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+
+  <!-- ══════════════════════════════════════════
+       CUSTOM CURSOR
+       (hidden on touch devices via CSS)
+  ══════════════════════════════════════════ -->
+  <div class="cursor"     id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+  <nav id="navbar">
+
+    <!-- Logo — replace "assets/img/logo.png" with your logo file -->
+    <a class="nav-logo" href="#">
+      <div class="nav-logo-icon">
+        <img src="assets/img/logo.png" alt="iGAP Logo" />
+      </div>
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#academy">Academy</a></li>
+      <li><a href="#Industry Solutions">Industry Solutions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Right-side CTA -->
+    <div class="nav-right">
+      <a class="btn-red" href="#contact">
+        Contact Us
+        <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 7h10M8 3l4 4-4 4"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Hamburger (mobile only) -->
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════
+       MOBILE MENU DRAWER
+  ══════════════════════════════════════════ -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#academy">Academy</a>
+    <a href="#Industry Solutions">Industry Solutions</a>
+    <a href="#contact">Contact</a>
+    <a class="btn-red" href="#contact">Book a Demo →</a>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 1 — HERO
+       Edit: badge text, heading, subtext, CTA labels.
+       Replace the .img-placeholder div with an <img>
+       once you have a real dashboard screenshot.
+  ══════════════════════════════════════════ -->
+  <section class="hero" id="home">
+
+    <!-- Background radial glow (decorative) -->
+    <div class="hero-bg-glow"></div>
+
+    <!-- "What's New" pill -->
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      What's New — Platform v2.0 Now Live
+      <span class="hero-badge-arrow">→</span>
+    </div>
+
+    <!-- Main heading — put your key message here -->
+    <h1>
+      Intelligent Solutions<br>
+      Powered by <span id="typingText"></span><span class="typing-cursor">|</span>
+    </h1>
+
+    <!-- Subheading — 1–2 sentences, plain language -->
+    <p>
+      Enterprise software | AI solutions |
+       Developer Training
+      
+    </p>
+
+    <!-- CTA buttons -->
+    <div class="hero-ctas">
+      <a class="btn-outline" href="#services">
+        Explore Services
+        <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 7h10M8 3l4 4-4 4"/>
+        </svg>
+      </a>
+      <a class="btn-red" href="#contact">
+        Book a Demo
+        <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 7h10M8 3l4 4-4 4"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Stats Counters -->
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <div class="stat-number" data-target="10">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="stat-number" data-target="4201">0</div>
+        <div class="stat-label">Active Users</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="stat-number" data-target="50">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-card stat-highlight">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div class="stat-number" data-target="100">0</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       MARQUEE — Client / Partner Logos
+       Duplicate each logo item to create the
+       seamless infinite scroll effect.
+  ══════════════════════════════════════════ -->
+  <div class="marquee-section">
+    <p class="marquee-label">Trusted by 20+ companies across India</p>
+    <div style="overflow:hidden; mask-image:linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+      <div class="marquee-track" id="marqueeTrack">
+
+        <!-- ── ADD YOUR CLIENT NAMES BELOW (duplicate the list for loop) ── -->
+        <div class="marquee-logo">Parshwanath Group</div>
+        <div class="marquee-logo">Gadre Tea Company</div>
+        <div class="marquee-logo">Lifeline Hospital</div>
+        <div class="marquee-logo">Vipras Technomart</div>
+        <div class="marquee-logo">Narayani Hospital</div>
+        <div class="marquee-logo">GEC Kolhapur</div>
+        <div class="marquee-logo">ISTE</div>
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee-logo">Parshwanath Group</div>
+        <div class="marquee-logo">Gadre Tea Company</div>
+        <div class="marquee-logo">Lifeline Hospital</div>
+        <div class="marquee-logo">Vipras Technomart</div>
+        <div class="marquee-logo">Narayani Hospital</div>
+        <div class="marquee-logo">GEC Kolhapur</div>
+        <div class="marquee-logo">ISTE</div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 2 — SERVICES
+       Each .feature-card = one service.
+       Update: label, title, description, and the
+       preview graphic inside each card.
+  ══════════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+
+      <span class="section-label animate-label">What We Do</span>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;">
+        <div>
+          <h2 class="animate-heading">Our<br>Services</h2>
+        </div>
+        <div>
+          <p class="section-sub animate-text" style="margin-bottom:0;">
+            From enterprise ERPs to AI pipelines — we build digital solutions
+            that scale with your business.
+          </p>
+        </div>
+      </div>
+
+      <div class="services-list" id="servicesList" style="margin-top:48px; display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+
+        <!-- Left Column -->
+        <div>
+          <!-- Service 1 -->
+          <div class="service-item" data-delay="0" style="display:flex; gap:24px; padding:32px 0; border-bottom:1px solid var(--border);">
+            <div style="font-family:var(--font-heading); font-size:48px; font-weight:700; color:var(--red); line-height:1;">01</div>
+            <div style="border-left:2px solid var(--red); padding-left:24px; flex:1;">
+              <h3 style="font-family:var(--font-heading); font-size:24px; font-weight:700; margin-bottom:8px;">AI & Machine Learning</h3>
+              <p style="color:var(--text2); line-height:1.6;">NLP pipelines, predictive systems, and custom LLM integrations for enterprise decision-making.</p>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-item" data-delay="1" style="display:flex; gap:24px; padding:32px 0; border-bottom:1px solid var(--border);">
+            <div style="font-family:var(--font-heading); font-size:48px; font-weight:700; color:var(--red); line-height:1;">02</div>
+            <div style="border-left:2px solid var(--red); padding-left:24px; flex:1;">
+              <h3 style="font-family:var(--font-heading); font-size:24px; font-weight:700; margin-bottom:8px;">Data Science & Analytics</h3>
+              <p style="color:var(--text2); line-height:1.6;">Real-time BI dashboards and predictive models that turn raw data into business strategy.</p>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-item" data-delay="2" style="display:flex; gap:24px; padding:32px 0;">
+            <div style="font-family:var(--font-heading); font-size:48px; font-weight:700; color:var(--red); line-height:1;">03</div>
+            <div style="border-left:2px solid var(--red); padding-left:24px; flex:1;">
+              <h3 style="font-family:var(--font-heading); font-size:24px; font-weight:700; margin-bottom:8px;">Custom ERP Solutions</h3>
+              <p style="color:var(--text2); line-height:1.6;">Integrated modules for managing workforce, workflows, and financial flows.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <!-- Service 4 -->
+          <div class="service-item" data-delay="3" style="display:flex; gap:24px; padding:32px 0; border-bottom:1px solid var(--border);">
+            <div style="font-family:var(--font-heading); font-size:48px; font-weight:700; color:var(--red); line-height:1;">04</div>
+            <div style="border-left:2px solid var(--red); padding-left:24px; flex:1;">
+              <h3 style="font-family:var(--font-heading); font-size:24px; font-weight:700; margin-bottom:8px;">Mobile App Development</h3>
+              <p style="color:var(--text2); line-height:1.6;">Native iOS & Android apps with data-centric UX for engagement and retention.</p>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-item" data-delay="4" style="display:flex; gap:24px; padding:32px 0; border-bottom:1px solid var(--border);">
+            <div style="font-family:var(--font-heading); font-size:48px; font-weight:700; color:var(--red); line-height:1;">05</div>
+            <div style="border-left:2px solid var(--red); padding-left:24px; flex:1;">
+              <h3 style="font-family:var(--font-heading); font-size:24px; font-weight:700; margin-bottom:8px;">Web Development</h3>
+              <p style="color:var(--text2); line-height:1.6;">Modern, responsive websites and web applications built with cutting-edge technologies.</p>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="service-item" data-delay="5" style="display:flex; gap:24px; padding:32px 0;">
+            <div style="font-family:var(--font-heading); font-size:48px; font-weight:700; color:var(--red); line-height:1;">06</div>
+            <div style="border-left:2px solid var(--red); padding-left:24px; flex:1;">
+              <h3 style="font-family:var(--font-heading); font-size:24px; font-weight:700; margin-bottom:8px;">E-commerce Solutions</h3>
+              <p style="color:var(--text2); line-height:1.6;">Complete online store platforms with payment integration, inventory management, and analytics.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 3 — PROJECTS (Horizontal Scrollable Cards)
+       Each card = one project case study.
+  ══════════════════════════════════════════ -->
+  <div class="features-detail" id="projects">
+    <div class="container">
+
+      <span class="section-label">Our Work</span>
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:32px;">
+        <div>
+          <h2>Featured<br>Projects</h2>
+        </div>
+        <p style="color:var(--text2); font-size:14px; max-width:400px;">
+          Real-world solutions delivering measurable impact across industries.
+        </p>
+      </div>
+
+      <!-- Horizontal Scrollable Container -->
+      <div class="projects-scroll-container" id="projectsScroll">
+        <div class="projects-scroll-track">
+
+          <!-- Project Card 1 -->
+          <div class="project-card">
+            <div class="project-img">
+              <div class="img-placeholder" style="aspect-ratio:16/10;">
+                <svg style="width:64px; height:64px; color:var(--text3);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2v20M2 12h20M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z"/>
+                  <path d="M8 12h8M12 8v8"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Healthcare</span>
+              <h3 class="project-title">Hospital Management System</h3>
+              <p class="project-desc">Lifeline Hospital - Comprehensive HMS covering patient records, appointments, billing, and inventory management.</p>
+              <ul class="project-features">
+                <li>Electronic patient records</li>
+                <li>Automated billing system</li>
+                <li>Real-time bed management</li>
+              </ul>
+              <a class="btn-red" href="#contact">
+                View Case Study
+                <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M2 7h10M8 3l4 4-4 4"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="project-card">
+            <div class="project-img">
+              <div class="img-placeholder" style="aspect-ratio:16/10;">
+                <svg style="width:64px; height:64px; color:var(--text3);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 3h18v18H3z"/>
+                  <path d="M3 9h18M9 3v18"/>
+                  <path d="M14 14l3 3m0-3l-3 3"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Steel & Trading</span>
+              <h3 class="project-title">Custom ERP Solution</h3>
+              <p class="project-desc">Parshwanath Group - Streamlined steel trading operations from lead management to delivery order generation.</p>
+              <ul class="project-features">
+                <li>Lead lifecycle management</li>
+                <li>Automated order generation</li>
+                <li>Real-time stock tracking</li>
+              </ul>
+              <a class="btn-red" href="#contact">
+                View Case Study
+                <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M2 7h10M8 3l4 4-4 4"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="project-card">
+            <div class="project-img">
+              <div class="img-placeholder" style="aspect-ratio:16/10;">
+                <svg style="width:64px; height:64px; color:var(--text3);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-tag">FMCG</span>
+              <h3 class="project-title">Supply Chain Platform</h3>
+              <p class="project-desc">Gadre Tea Company - End-to-end distribution management with route optimization and demand forecasting.</p>
+              <ul class="project-features">
+                <li>Warehouse management</li>
+                <li>Route optimization</li>
+                <li>Sales tracking & analytics</li>
+              </ul>
+              <a class="btn-red" href="#contact">
+                View Case Study
+                <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M2 7h10M8 3l4 4-4 4"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 4 -->
+          <div class="project-card">
+            <div class="project-img">
+              <div class="img-placeholder" style="aspect-ratio:16/10;">
+                <svg style="width:64px; height:64px; color:var(--text3);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Education</span>
+              <h3 class="project-title">Learning Management System</h3>
+              <p class="project-desc">GEC Kolhapur - Complete student management with online learning, examination portals, and attendance tracking.</p>
+              <ul class="project-features">
+                <li>Student information system</li>
+                <li>Online examination portal</li>
+                <li>Attendance & grade tracking</li>
+              </ul>
+              <a class="btn-red" href="#contact">
+                View Case Study
+                <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M2 7h10M8 3l4 4-4 4"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Dot Pagination -->
+      <div class="projects-dots" id="projectsDots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SECTION 4 — ACADEMY
+       Course offerings, internship program,
+       and enrollment information.
+  ══════════════════════════════════════════ -->
+  <section id="academy" class="pricing-section">
+    <div class="container">
+
+      <div style="text-align:center; margin-bottom:0;">
+        <span class="section-label" style="justify-content:center;">iGAP Academy</span>
+        <h2>Learn. Build. Get Placed.</h2>
+        <p class="section-sub" style="margin:0 auto;">
+          Industry-ready developer training with real project experience.
+          Transform your career with hands-on learning.
+        </p>
+      </div>
+
+      <div class="pricing-grid reveal">
+
+        <!-- Card 1 - Courses List -->
+        <div class="pricing-card">
+          <h3>Available Courses</h3>>
+          <div class="pricing-desc">Choose from our industry-aligned technology tracks</div>
+          <ul class="pricing-features">
+            <li>Java Full Stack (React)</li>
+            <li>Data Science & AI</li>
+            <li>.NET Full Stack (Angular)</li>
+            <li>Python Full Stack (Django)</li>
+            <li>MERN Stack Development</li>
+            <li>Mobile App Development</li>
+          </ul>
+          <div style="margin-top:20px; padding:16px; background:rgba(232,37,26,0.1); border-radius:8px; border:1px solid rgba(232,37,26,0.3);">
+            <div style="font-size:13px; color:var(--text2);">Duration: 3-6 months</div>
+            <div style="font-size:13px; color:var(--text2);">Fee: ₹45,000 per course</div>
+          </div>
+        </div>
+
+        <!-- Card 2 - Internship Program (Featured) -->
+        <div class="pricing-card featured">
+          <h3>Internship Program</h3>>
+          <div class="pricing-desc">Real-world project experience on live client applications</div>
+          <ul class="pricing-features">
+            <li>Work on actual client projects</li>
+            <li>Mentorship from senior developers</li>
+            <li>Industry-standard tools & workflows</li>
+            <li>Code reviews & best practices</li>
+            <li>Internship completion certificate</li>
+            <li>Performance-based stipend</li>
+          </ul>
+          <div style="margin-top:20px; padding:16px; background:rgba(232,37,26,0.15); border-radius:8px; border:1px solid rgba(232,37,26,0.4);">
+            <div style="font-size:13px; color:var(--text2);">Duration: 2-3 months</div>
+            <div style="font-size:13px; color:var(--red); font-weight:600;">Included with course enrollment</div>
+          </div>
+        </div>
+
+        <!-- Card 3 - Enrollment CTA -->
+        <div class="pricing-card">
+          <h3>Ready to Start ?</h3>>
+          <div class="pricing-desc">Join our next batch and kickstart your tech career</div>
+          <ul class="pricing-features">
+            <li>Live interactive classes</li>
+            <li>Recorded sessions for revision</li>
+            <li>Dedicated doubt-solving support</li>
+            <li>Career guidance & resume building</li>
+            <li>Placement assistance</li>
+            <li>Lifetime alumni network access</li>
+          </ul>
+          <a class="btn-red" href="#contact" style="justify-content:center; margin-top:20px;">Enroll Now</a>
+          <div style="margin-top:16px; text-align:center;">
+            <a href="https://wa.me/919561320192?text=Hi,+I+want+to+know+more+about+iGAP+Academy+courses" style="color:var(--text3); font-size:13px; text-decoration:none;">📞 Call for course details</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 5 — INDUSTRY SOLUTIONS
+       Sector-specific solutions we provide.
+  ══════════════════════════════════════════ -->
+  <section id="Industry Solutions" class="industry-solutions-section">
+    <div class="container">
+
+      <span class="section-label">Industry Solutions</span>
+      <div style="text-align:center; margin-bottom:64px;">
+        <h2>Tailored Solutions<br>for Every Industry</h2>
+        <p class="section-sub" style="margin:0 auto;">
+          Domain-specific software that understands your business challenges
+          and delivers measurable results.
+        </p>
+      </div>
+
+      <div class="industry-solutions-list reveal" id="industryList">
+
+        <!-- Healthcare Sector -->
+        <div class="industry-item">
+          <div class="industry-number">01</div>
+          <div class="industry-icon-wrapper">
+            <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2v20M2 12h20M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z"/>
+              <path d="M8 12h8M12 8v8"/>
+            </svg>
+          </div>
+          <div class="industry-content">
+            <div class="industry-header">
+              <div>
+                <div class="industry-tag">Healthcare</div>
+                <h3 class="industry-title">Hospital Management Systems</h3>
+              </div>
+              <svg class="industry-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <p class="industry-desc">
+              Complete HMS covering patient records, appointment scheduling, billing, pharmacy, and lab management.
+            </p>
+            <div class="industry-features">
+              <span>Electronic Health Records (EHR)</span>
+              <span>OPD & IPD Management</span>
+              <span>Pharmacy & Inventory Control</span>
+              <span>Billing & Insurance Claims</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Steel & Trading Sector -->
+        <div class="industry-item">
+          <div class="industry-number">02</div>
+          <div class="industry-icon-wrapper">
+            <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 3h18v18H3z"/>
+              <path d="M3 9h18M9 3v18"/>
+              <path d="M14 14l3 3m0-3l-3 3"/>
+            </svg>
+          </div>
+          <div class="industry-content">
+            <div class="industry-header">
+              <div>
+                <div class="industry-tag">Steel & Trading</div>
+                <h3 class="industry-title">Trading & Distribution ERP</h3>
+              </div>
+              <svg class="industry-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <p class="industry-desc">
+              End-to-end ERP for steel trading, from lead capture to delivery order generation and financial reconciliation.
+            </p>
+            <div class="industry-features">
+              <span>Lead & Quotation Management</span>
+              <span>Order Processing & Tracking</span>
+              <span>Inventory & Warehouse Control</span>
+              <span>Delivery & Logistics Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FMCG Sector -->
+        <div class="industry-item">
+          <div class="industry-number">03</div>
+          <div class="industry-icon-wrapper">
+            <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+            </svg>
+          </div>
+          <div class="industry-content">
+            <div class="industry-header">
+              <div>
+                <div class="industry-tag">FMCG</div>
+                <h3 class="industry-title">Supply Chain & Distribution</h3>
+              </div>
+              <svg class="industry-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <p class="industry-desc">
+              Comprehensive distribution management with route optimization, demand forecasting, and real-time tracking.
+            </p>
+            <div class="industry-features">
+              <span>Warehouse Management System</span>
+              <span>Distributor & Retailer Network</span>
+              <span>Route Optimization & Tracking</span>
+              <span>Sales Analytics & Forecasting</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Sector -->
+        <div class="industry-item">
+          <div class="industry-number">04</div>
+          <div class="industry-icon-wrapper">
+            <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <div class="industry-content">
+            <div class="industry-header">
+              <div>
+                <div class="industry-tag">Education</div>
+                <h3 class="industry-title">Learning Management Systems</h3>
+              </div>
+              <svg class="industry-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <p class="industry-desc">
+              Complete student information system with online learning, examination portals, and administrative workflows.
+            </p>
+            <div class="industry-features">
+              <span>Student Information System</span>
+              <span>Online Learning & Assignments</span>
+              <span>Examination & Grading Portal</span>
+              <span>Attendance & Performance Tracking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retail & E-commerce -->
+        <div class="industry-item">
+          <div class="industry-number">05</div>
+          <div class="industry-icon-wrapper">
+            <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <path d="M3 6h18M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <div class="industry-content">
+            <div class="industry-header">
+              <div>
+                <div class="industry-tag">Retail & E-commerce</div>
+                <h3 class="industry-title">E-commerce Platforms</h3>
+              </div>
+              <svg class="industry-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <p class="industry-desc">
+              Full-featured online stores with payment integration, inventory sync, and customer analytics.
+            </p>
+            <div class="industry-features">
+              <span>Multi-vendor Marketplace</span>
+              <span>Payment Gateway Integration</span>
+              <span>Inventory & Order Management</span>
+              <span>Customer Analytics & CRM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manufacturing -->
+        <div class="industry-item">
+          <div class="industry-number">06</div>
+          <div class="industry-icon-wrapper">
+            <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M2 20h20M3 20V9l4-4 4 4 4-4 4 4v11"/>
+              <path d="M7 13v4m5-6v6m5-4v4"/>
+            </svg>
+          </div>
+          <div class="industry-content">
+            <div class="industry-header">
+              <div>
+                <div class="industry-tag">Manufacturing</div>
+                <h3 class="industry-title">Production & Quality Control</h3>
+              </div>
+              <svg class="industry-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <p class="industry-desc">
+              Manufacturing execution systems with production planning, quality control, and equipment monitoring.
+            </p>
+            <div class="industry-features">
+              <span>Production Planning & Scheduling</span>
+              <span>Quality Control & Inspection</span>
+              <span>Equipment Maintenance Tracking</span>
+              <span>Raw Material & Finished Goods</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- See More Button -->
+      <div style="text-align:center; margin-top:48px;">
+        <button class="btn-see-more" id="industryToggle" onclick="toggleIndustry()">
+          <span class="see-more-text">See More Industries</span>
+          <svg class="see-more-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 6 — CTA BANNER
+       Update heading, subtext, and email
+       placeholder. Wire up form to your backend.
+  ══════════════════════════════════════════ -->
+  <div class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-inner reveal">
+
+        <div class="cta-text">
+          <h2>Ready to Build<br>Something Great?</h2>
+          <p>Tell us about your project and we'll get back to you within 4 business hours.</p>
+        </div>
+
+        <div>
+          <div class="cta-form">
+            <input class="cta-input" type="email" placeholder="Enter your email" />
+            <a class="btn-red" href="https://wa.me/919561320192?text=Hi+iGAP+Technologies,+I+want+to+discuss+a+project.">
+              WhatsApp Us
+              <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 7h10M8 3l4 4-4 4"/>
+              </svg>
+            </a>
+          </div>
+          <p style="font-size:12px; color:var(--text3); margin-top:12px;">
+            📍 Rajarampuri 4th Lane, Kolhapur &nbsp;·&nbsp;
+            📞 +91 9561320192
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+       Update: tagline, social links, column links,
+       and copyright year.
+  ══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a class="nav-logo" href="#" style="display:inline-flex;">
+          <div class="nav-logo-icon">
+            <img src="assets/img/logo.png" alt="iGAP Logo" style="width:22px; height:22px; object-fit:contain;" />
+          </div>
+          <span class="nav-logo-text">iGAP</span>
+        </a>
+        <p>
+          A premium software development house specialising in enterprise ERPs,
+          AI solutions, and developer training. Based in Kolhapur, serving India and beyond.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" title="LinkedIn">in</a>
+          <a href="#" class="social-btn" title="Twitter/X">𝕏</a>
+          <a href="#" class="social-btn" title="Facebook">fb</a>
+          <a href="#" class="social-btn" title="Instagram">ig</a>
+        </div>
+      </div>
+
+      <!-- Services column -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">AI & Machine Learning</a></li>
+          <li><a href="#services">Data Science</a></li>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">Mobile Apps</a></li>
+          <li><a href="#services">Custom ERP</a></li>
+          <li><a href="#services">E-commerce</a></li>
+        </ul>
+      </div>
+
+      <!-- Company column -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#projects">Portfolio</a></li>
+          <li><a href="#academy">iGAP Academy</a></li>
+          <li><a href="#Industry Solutions">Industry Solutions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact column -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919561320192">+91 9561320192</a></li>
+          <li><a href="tel:+919552610806">+91 9552610806</a></li>
+          <li><a href="mailto:info@igaptechnologies.com">info@igaptechnologies.com</a></li>
+          <li><a href="https://wa.me/919561320192" target="_blank">WhatsApp Us</a></li>
+          <li><a href="#">Rajarampuri, Kolhapur</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span>© 2026 iGAP Technologies Pvt. Ltd. All rights reserved.</span>
+      <span>
+        <a href="#" style="color:var(--text3); text-decoration:none;">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="#" style="color:var(--text3); text-decoration:none;">Terms & Conditions</a>
+      </span>
+    </div>
+
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════
+       BACK TO TOP BUTTON
+  ══════════════════════════════════════════ -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <svg viewBox="0 0 18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 14V4M4 9l5-5 5 5"/>
+    </svg>
+  </button>
+
+
+  <!-- ══ JS (loaded last so DOM is ready) ══ -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

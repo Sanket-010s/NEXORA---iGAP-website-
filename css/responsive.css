@@ -1,0 +1,77 @@
+/* ============================================================
+   RESPONSIVE.CSS
+   All media queries in one place.
+   Breakpoints:
+     1024px → tablet landscape / small laptop
+     640px  → mobile
+   ============================================================ */
+
+
+/* ── TABLET & SMALL LAPTOP (≤ 1024px) ── */
+@media (max-width: 1024px) {
+
+  /* Navbar: hide desktop links, show hamburger */
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-right .btn-outline { display: none; }
+
+  /* Features: single column */
+  .features-grid { grid-template-columns: 1fr; }
+  .feature-card.tall { grid-row: span 1; }
+
+  /* Feature detail rows: stack vertically */
+  .feature-row { grid-template-columns: 1fr; gap: 40px; }
+  .feature-row.reverse { direction: ltr; }
+
+  /* Pricing: single column, centered */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Blog: single column, centered */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Footer: 2 columns */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+
+  /* CTA: single column */
+  .cta-inner { grid-template-columns: 1fr; padding: 48px 36px; }
+}
+
+
+/* ── MOBILE (≤ 640px) ── */
+@media (max-width: 640px) {
+
+  /* Reduce section padding on mobile */
+  section { padding: 72px 16px; }
+
+  /* Hero CTAs: stack vertically */
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas a, .hero-ctas button { justify-content: center; }
+
+  /* Footer: single column */
+  .footer-grid { grid-template-columns: 1fr; }
+
+  /* Footer bottom: stack */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* CTA: tighter padding */
+  .cta-inner { padding: 40px 24px; }
+
+  /* CTA form: stack input and button */
+  .cta-form { flex-direction: column; }
+  .cta-input { width: 100%; }
+}
